@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//1. 封装一个函数计算一个数的n次方结果，要求返回最终结果 如函数为 pow(3,5)指的是计算3的5次方的值
+	let pow=(x,y)=>Math.pow(x,y);
+	console.log(pow(8,5))
+	//2. 封装一个函数，此函数可以传入1个及以上不限个数的参数，要求计算所有传入参数的和，返回回来
+	let Sum=(a,...args)=>{
+		let arr = [a,...args];
+		let sum = arr.reduce((tem,item)=>tem+item);
+		return sum;
+	}
+	console.log(Sum(1,2,3));
+	//3. 封装一个买饭函数 buyMeal 传入两个参数，一个是给多少钱，另一个是食物的类别，饭的类别及详细价格：
+//      面条：
+//         	炸酱面  10元
+//         	油泼面  12元
+//         	热干面  14元
+//		盖饭：
+//         	鱼香肉丝盖饭  15元
+//        	宫保鸡丁盖饭  16元
+//         	番茄炒蛋盖饭  12元
+//		先去判断买哪一类别的饭，然后判断传入的钱数可以买哪一款食物，根据钱数再返回食物种类，如果钱数不在价格表里，则返回null
+	let buyMeal=(str,price)=>{
+		if(str=="面条"){
+			if(price == 10){
+				console.log("炸酱面");
+			}else if(price == 12){
+				console.log("油泼面");
+			}else if(price == 14){
+				console.log("热干面");
+			}else{
+				console.log(null); 
+			}
+		}else if(str=="盖饭"){
+			if(price == 15){
+				console.log("鱼香肉丝盖饭");
+			}else if(price == 16){
+				console.log("宫保鸡丁盖饭");
+			}else if(price == 12){
+				console.log("番茄炒蛋盖饭");
+			}else{
+				console.log(null); 
+			}
+		}	
+	};
+	buyMeal("盖饭",18);
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    //map    映射
+    let arr = [1,2,3];
+    // let a = arr.map(function(x){
+    //     return x*2;
+    // })
+    let a = arr.map(x=>x*2);
+    // alert(a);
+
+    let arr1 = [59,30,99,60];
+    let result = arr1.map(item=>item>=60?"及格":"不及格");
+    // alert(result);
+    //reduce  汇总(一堆出来一个)
+    let num = [1,3,5];
+    let result1 = num.reduce(function(tmp,item,index){   //tmp临时结果，item表示当前数字，index表示索引
+        // alert(tmp+","+item+","+index);
+        
+        if(index != num.length-1){
+            return tmp+item;
+        }else{
+            return (tmp+item)/num.length;
+        }
+    })
+    // alert(result1);
+
+
+    //filter    过滤
+    // 数组过滤
+    let x = [1,3,5,7,9,11,13,15];
+    // let result2 = x.filter((x1)=>{
+    //     if(x1%3==0){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // });
+    let result3 = x.filter((x1)=>x1%3==0);
+    // alert(result3);
+    //对象
+    let y = [
+        {title:"女士包包",price:10000},
+        {title:"男士包包",price:1000},
+        {title:"女式衣服",price:100},
+        {title:"男士衣服",price:300}
+    ];
+    let result4 = y.filter(json=>json.price<1000);
+    console.log(result4);
+
+
+    //forEach   迭代
+    let z = [1,2,3,4,5,6];
+    // z.forEach(x=>alert(x));
+    z.forEach((item,index)=>{
+        alert(index+":"+item);
+    })
+</script>

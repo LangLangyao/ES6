@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,div,ul,li{margin: 0;padding: 0;}
+        .box{width: 310px;height: 220px;overflow: hidden;margin: 200px auto;}
+        .box ul{width: 310px;height: 20px;list-style: none;}
+        .box ul li{float: left;width: 100px;background: #ccc;text-align: center;border: 1px solid black;}
+        .box div{width: 306px;height: 200px;background: red;text-align: center;line-height: 200px;display: none;}
+        .box .show{display: block;}
+    </style>
+</head>
+<body>
+    <div class="box">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <div>第一个div</div>
+            <div class="show">第二个div</div>
+            <div>第三个div</div>
+    </div>
+    
+</body>
+</html>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    var box = document.getElementsByClassName("box")[0];
+    var xiao = box.getElementsByTagName("div");
+    var oli = document.getElementsByTagName("li");
+    let show = (() =>{
+        for(let i=0;i<oli.length;i++){
+            oli[i].onclick = () =>{
+                for(let i=0;i<oli.length;i++){
+                    xiao[i].className = "";
+                }
+                xiao[i].className = "show";
+            }
+        }
+    })();
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //解构赋值：1.左右两边必须相等；2.右边必须是个东西；3.声明和赋值不能分开（必须在一句话里完成）；
+    //数组解构赋值
+    let [a,b,c] = [1,2,3];
+    console.log(a,b,c);
+    //json解构赋值
+    let {d,e,f} = {d:4,e:5,f:6}
+    console.log(d,e,f);
+
+
+    let [json,arr,num,str]=[{o : 1,p : 2},[4,5,6],9,"asd"];
+    console.log(json,arr,num,str);
+
+    var {x: y = 3} = {};
+    console.log(y);
+</script>

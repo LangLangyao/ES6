@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class User{
+        constructor(username,possword){
+            this.username = username;
+            this.possword = possword;
+        }
+        showname(){
+            alert(this.username);
+        }
+        showword(){
+            alert(this.possword);
+        }
+    }
+    class VipUser extends User{
+        constructor(username,possword,lv){
+            super(username,possword);
+            this.lv = lv;
+        }
+        showlv(){
+            alert(this.lv);
+        }
+    }
+    var p1 = new User("admin","123456");
+    p1.showname();
+    p1.showword();
+    var p2 = new VipUser("admin","123456",5);
+    p2.showname();
+    p2.showname();
+    p2.showlv();
+    //1.多了class关键字 构造器和类分开了（有专门的构造器constructor）
+    //2.class里面直接加方法
+</script>
